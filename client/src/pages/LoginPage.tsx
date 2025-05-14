@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTheme } from "@/context/ThemeContext";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/context/AuthContext";
 import { useGlassmorphism } from "@/hooks/useGlassmorphism";
 import { Link, useLocation } from "wouter";
 import ThemeToggle from "@/components/layout/ThemeToggle";
@@ -45,38 +45,39 @@ export function LoginPage({ isAdmin = false, isRegister = false }: LoginPageProp
     
     setIsLoading(true);
     
-    // Verificação simplificada para permitir login
-    if (isAdmin) {
-      // Tentando fazer login como administrador
-      if (email === 'admin@example.com' && password === 'admin123') {
-        // Simulação de login bem-sucedido
-        setTimeout(() => {
-          setIsLoading(false);
-          window.location.href = '/admin'; // Redirecionamento forçado para área admin
-        }, 1000);
-        return;
+    try {
+      // Usa o contexto AuthContext diretamente
+      const success = await login({ email, password });
+      
+      if (success) {
+        // O login foi bem-sucedido
+        setIsLoading(false);
+        
+        // O redirecionamento será feito pelo Router baseado no usuário logado
+        // mas vamos forçar o redirecionamento para garantir
+        const userFound = users.find(u => u.email === email);
+        
+        if (userFound && userFound.type === 'admin') {
+          setLocation('/admin');
+        } else {
+          setLocation('/dashboard');
+        }
+      } else {
+        toast({
+          title: "Erro de login",
+          description: "Email ou senha incorretos.",
+          variant: "destructive",
+        });
+        setIsLoading(false);
       }
-    } else {
-      // Tentando fazer login como cliente
-      if (email === 'cliente@example.com' && password === 'senha123') {
-        // Simulação de login bem-sucedido
-        setTimeout(() => {
-          setIsLoading(false);
-          window.location.href = '/dashboard'; // Redirecionamento forçado para dashboard
-        }, 1000);
-        return;
-      }
-    }
-    
-    // Se chegou aqui, login falhou
-    setTimeout(() => {
+    } catch (error) {
       toast({
-        title: "Erro de login",
-        description: "Email ou senha incorretos.",
+        title: "Erro",
+        description: "Ocorreu um erro ao tentar fazer login.",
         variant: "destructive",
       });
       setIsLoading(false);
-    }, 800);
+    }
   };
 
   const handleRegister = async (e: React.FormEvent) => {
