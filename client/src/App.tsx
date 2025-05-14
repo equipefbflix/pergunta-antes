@@ -23,11 +23,21 @@ function Router() {
     // Rotas públicas para autenticação
     return (
       <Switch>
-        <Route path="/" component={LoginPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/admin/login" component={() => <LoginPage isAdmin={true} />} />
-        <Route path="/cadastro" component={() => <LoginPage isRegister={true} />} />
-        <Route component={NotFound} />
+        <Route path="/">
+          <LoginPage />
+        </Route>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+        <Route path="/admin/login">
+          <LoginPage isAdmin={true} />
+        </Route>
+        <Route path="/cadastro">
+          <LoginPage isRegister={true} />
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
       </Switch>
     );
   }

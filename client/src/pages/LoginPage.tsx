@@ -7,6 +7,7 @@ import ThemeToggle from "@/components/layout/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { users } from "@/mocks/data";
 
 interface LoginPageProps {
   isAdmin?: boolean;
@@ -45,9 +46,25 @@ export function LoginPage({ isAdmin = false, isRegister = false }: LoginPageProp
     setIsLoading(true);
     
     try {
-      const success = await login({ email, password });
+      // Validação dos dados de login com os dados mockados
+      // Isso é apenas para simulação. Em um app real, usaríamos a API
+      const user = users.find(u => u.email === email && u.password === password);
       
-      if (!success) {
+      if (user) {
+        // Login bem-sucedido
+        if ((isAdmin && user.type === 'admin') || (!isAdmin && user.type === 'client')) {
+          await login({ email, password });
+          // Redirecionamento é feito pelo hook useAuth
+        } else {
+          toast({
+            title: "Erro de login",
+            description: isAdmin 
+              ? "Este usuário não tem acesso à área administrativa."
+              : "Este usuário não tem acesso à área de cliente.",
+            variant: "destructive",
+          });
+        }
+      } else {
         toast({
           title: "Erro de login",
           description: "Email ou senha incorretos.",
@@ -94,7 +111,7 @@ export function LoginPage({ isAdmin = false, isRegister = false }: LoginPageProp
       toast({
         title: "Cadastro realizado com sucesso!",
         description: "Você já pode fazer login com suas credenciais.",
-        variant: "success",
+        variant: "default",
       });
       setIsLoading(false);
       setLocation("/login");
