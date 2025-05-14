@@ -19,12 +19,20 @@ import { useEffect } from "react";
 function Router() {
   const { isAuthenticated, userType } = useAuth();
 
-  // If not authenticated, show login page
   if (!isAuthenticated) {
-    return <LoginPage />;
+    // Rotas públicas para autenticação
+    return (
+      <Switch>
+        <Route path="/" component={LoginPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/admin/login" component={() => <LoginPage isAdmin={true} />} />
+        <Route path="/cadastro" component={() => <LoginPage isRegister={true} />} />
+        <Route component={NotFound} />
+      </Switch>
+    );
   }
 
-  // If authenticated as admin, show admin dashboard
+  // Se autenticado como admin, mostrar dashboard admin
   if (userType === "admin") {
     return (
       <Switch>
@@ -35,7 +43,7 @@ function Router() {
     );
   }
 
-  // If authenticated as client, show client routes
+  // Se autenticado como cliente, mostrar rotas do cliente
   return (
     <Switch>
       <Route path="/" component={DashboardPage} />

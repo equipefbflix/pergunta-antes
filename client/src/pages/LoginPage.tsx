@@ -2,23 +2,35 @@ import { useState } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import { useAuth } from "@/hooks/useAuth";
 import { useGlassmorphism } from "@/hooks/useGlassmorphism";
+import { Link, useLocation } from "wouter";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 
-export function LoginPage() {
+interface LoginPageProps {
+  isAdmin?: boolean;
+  isRegister?: boolean;
+}
+
+export function LoginPage({ isAdmin = false, isRegister = false }: LoginPageProps) {
   const { theme } = useTheme();
   const { login } = useAuth();
   const { toast } = useToast();
   const glassStyles = useGlassmorphism();
+  const [, setLocation] = useLocation();
   
-  const [loginType, setLoginType] = useState<"client" | "admin">("client");
+  // Campos de login
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
+  // Campos adicionais para cadastro
+  const [name, setName] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!email || !password) {
@@ -53,6 +65,48 @@ export function LoginPage() {
     }
   };
 
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validação dos campos de cadastro
+    if (!name || !email || !password || !confirmPassword) {
+      toast({
+        title: "Erro de cadastro",
+        description: "Por favor, preencha todos os campos.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    if (password !== confirmPassword) {
+      toast({
+        title: "Erro de cadastro",
+        description: "As senhas não coincidem.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsLoading(true);
+    
+    // Simulação de cadastro bem-sucedido
+    setTimeout(() => {
+      toast({
+        title: "Cadastro realizado com sucesso!",
+        description: "Você já pode fazer login com suas credenciais.",
+        variant: "success",
+      });
+      setIsLoading(false);
+      setLocation("/login");
+    }, 1000);
+  };
+
+  const getTitle = () => {
+    if (isRegister) return "Criar Conta";
+    if (isAdmin) return "Login Administrador";
+    return "Login Cliente";
+  };
+
   return (
     <section className="flex-1 flex items-center justify-center p-4 relative min-h-screen">
       {/* Background image */}
@@ -65,82 +119,162 @@ export function LoginPage() {
         <div className="absolute inset-0 bg-black opacity-60"></div>
       </div>
       
-      {/* Login Container */}
+      {/* Login/Register Container */}
       <div className={`${glassStyles.className} rounded-2xl shadow-xl max-w-md w-full mx-auto z-10`}>
         <div className="p-8">
-          <div className="text-center mb-8">
+          <div className="text-center mb-6">
             <h1 className="text-primary font-bold text-4xl tracking-tight">FBFLIX</h1>
             <p className="text-gray-400 mt-2">Plataforma de serviços</p>
           </div>
           
-          {/* Login Tabs */}
-          <div className="flex mb-6 border-b border-gray-700">
-            <button 
-              className={`flex-1 py-2 px-4 ${
-                loginType === "client" 
-                  ? "text-primary border-b-2 border-primary font-semibold" 
-                  : "text-gray-400 hover:text-gray-200 transition-colors"
-              }`}
-              onClick={() => setLoginType("client")}
-            >
-              Cliente
-            </button>
-            <button 
-              className={`flex-1 py-2 px-4 ${
-                loginType === "admin" 
-                  ? "text-primary border-b-2 border-primary font-semibold" 
-                  : "text-gray-400 hover:text-gray-200 transition-colors"
-              }`}
-              onClick={() => setLoginType("admin")}
-            >
-              Admin
-            </button>
+          <div className="mb-6">
+            <h2 className="text-xl font-bold text-white text-center">{getTitle()}</h2>
           </div>
           
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-                E-mail
-              </label>
-              <Input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-                placeholder="seu@email.com"
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">
-                Senha
-              </label>
-              <Input
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-                placeholder="********"
-              />
-            </div>
-            <div>
-              <Button
-                type="submit"
-                disabled={isLoading}
-                className="w-full py-3 px-4 bg-primary hover:bg-red-700 text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-              >
-                {isLoading ? "Entrando..." : "Entrar"}
-              </Button>
-            </div>
-            <div className="text-center">
-              <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">
-                Esqueceu sua senha?
-              </a>
-            </div>
-          </form>
+          {isRegister ? (
+            // Formulário de Cadastro
+            <form className="space-y-4" onSubmit={handleRegister}>
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+                  Nome Completo
+                </label>
+                <Input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                  placeholder="Seu nome completo"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+                  E-mail
+                </label>
+                <Input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                  placeholder="seu@email.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">
+                  Senha
+                </label>
+                <Input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                  placeholder="********"
+                />
+              </div>
+              <div>
+                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-300 mb-1">
+                  Confirmar Senha
+                </label>
+                <Input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                  placeholder="********"
+                />
+              </div>
+              <div className="pt-2">
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full py-3 px-4 bg-primary hover:bg-red-700 text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                >
+                  {isLoading ? "Processando..." : "Criar Conta"}
+                </Button>
+              </div>
+              <div className="text-center mt-4">
+                <p className="text-sm text-gray-400">
+                  Já tem uma conta?{" "}
+                  <Link href="/login">
+                    <a className="text-primary hover:underline">Fazer login</a>
+                  </Link>
+                </p>
+              </div>
+            </form>
+          ) : (
+            // Formulário de Login
+            <form className="space-y-4" onSubmit={handleLogin}>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+                  E-mail
+                </label>
+                <Input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                  placeholder="seu@email.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">
+                  Senha
+                </label>
+                <Input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full px-4 py-3 bg-gray-800 bg-opacity-50 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                  placeholder="********"
+                />
+              </div>
+              <div className="pt-2">
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full py-3 px-4 bg-primary hover:bg-red-700 text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                >
+                  {isLoading ? "Entrando..." : "Entrar"}
+                </Button>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:justify-between text-center sm:text-left space-y-2 sm:space-y-0 mt-4">
+                <Link href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">
+                  Esqueceu sua senha?
+                </Link>
+                
+                {!isAdmin && (
+                  <Link href="/cadastro" className="text-sm text-primary hover:underline">
+                    Criar conta
+                  </Link>
+                )}
+              </div>
+              
+              {isAdmin ? (
+                <div className="text-center mt-4">
+                  <Link href="/login" className="text-sm text-primary hover:underline">
+                    Ir para login de cliente
+                  </Link>
+                </div>
+              ) : (
+                <div className="text-center mt-4">
+                  <Link href="/admin/login" className="text-sm text-primary hover:underline">
+                    Área do administrador
+                  </Link>
+                </div>
+              )}
+            </form>
+          )}
         </div>
       </div>
       
