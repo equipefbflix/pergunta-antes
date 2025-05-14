@@ -82,31 +82,156 @@ export const subscriptions: Subscription[] = [
   }
 ];
 
-// Mock Tutorials
+// Mock Tutorials com categorias para estilo Netflix
+export const tutorialCategories = [
+  { id: 1, name: '🔥 Mais assistidos' },
+  { id: 2, name: '📚 Básicos da Plataforma' },
+  { id: 3, name: '⚙️ Configurações e Integrações' },
+  { id: 4, name: '🛠️ Soluções avançadas' },
+  { id: 5, name: '📱 Automatizações e Cookies' }
+];
+
 export const tutorials: Tutorial[] = [
+  // 🔥 Mais assistidos
   {
     id: 1,
     title: 'Como configurar seu proxy',
-    description: 'Aprenda a configurar corretamente seu proxy para máxima performance.',
+    description: 'Aprenda a configurar corretamente seu proxy para máxima performance e evitar bloqueios.',
     image: 'https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
     duration: '4:32',
-    link: '#'
+    link: '#',
+    category: 1,
+    year: '2025',
+    featured: true
   },
   {
     id: 2,
     title: 'Segurança da sua conta',
-    description: 'Dicas essenciais para manter sua conta protegida.',
+    description: 'Dicas essenciais para manter sua conta protegida contra invasões e bloqueios.',
     image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
     duration: '6:18',
-    link: '#'
+    link: '#',
+    category: 1,
+    year: '2025',
+    featured: false
   },
+  
+  // 📚 Básicos da Plataforma
   {
     id: 3,
     title: 'Maximizando seus lucros',
     description: 'Estratégias avançadas para aumentar seu ROI com nossas ferramentas.',
     image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
     duration: '8:45',
-    link: '#'
+    link: '#',
+    category: 2,
+    year: '2025',
+    featured: false
+  },
+  {
+    id: 4,
+    title: 'Primeiros passos na plataforma',
+    description: 'Guia completo para novos usuários começarem a usar nossa plataforma.',
+    image: 'https://images.unsplash.com/photo-1576267423048-15c0040fec78?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400',
+    duration: '5:12',
+    link: '#',
+    category: 2,
+    year: '2025',
+    featured: false
+  },
+  {
+    id: 5,
+    title: 'Conhecendo o Dashboard',
+    description: 'Aprenda a navegar e usar todas as funcionalidades do seu painel de controle.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400',
+    duration: '3:55',
+    link: '#',
+    category: 2,
+    year: '2025',
+    featured: false
+  },
+  
+  // ⚙️ Configurações e Integrações
+  {
+    id: 6,
+    title: 'Integração com API de pagamentos',
+    description: 'Como integrar nossa plataforma com sistemas de pagamento externos.',
+    image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400',
+    duration: '10:22',
+    link: '#',
+    category: 3,
+    year: '2025',
+    featured: false
+  },
+  {
+    id: 7,
+    title: 'Configuração para múltiplos browsers',
+    description: 'Configure corretamente para usar em diferentes navegadores.',
+    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400',
+    duration: '7:41',
+    link: '#',
+    category: 3,
+    year: '2025',
+    featured: false
+  },
+  
+  // 🛠️ Soluções avançadas
+  {
+    id: 8,
+    title: 'Masterclass: Evitando bloqueios',
+    description: 'Técnicas avançadas para maximizar o tempo de uso sem bloqueios.',
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400',
+    duration: '15:30',
+    link: '#',
+    category: 4,
+    year: '2025',
+    featured: true
+  },
+  {
+    id: 9,
+    title: 'Anti-detecção avançado',
+    description: 'Métodos avançados para evitar a detecção de automação em suas contas.',
+    image: 'https://images.unsplash.com/photo-1510511233900-1982d92bd835?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400',
+    duration: '12:18',
+    link: '#',
+    category: 4,
+    year: '2025',
+    featured: false
+  },
+  
+  // 📱 Automatizações e Cookies
+  {
+    id: 10,
+    title: 'Automação com nossa API',
+    description: 'Como criar scripts de automação usando nossa API REST.',
+    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400',
+    duration: '9:45',
+    link: '#',
+    category: 5,
+    year: '2025',
+    featured: false
+  },
+  {
+    id: 11,
+    title: 'Gerenciamento de cookies',
+    description: 'Aprenda a gerenciar, salvar e reutilizar cookies de sessão.',
+    image: 'https://images.unsplash.com/photo-1542342352-3a95ece9bc58?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400',
+    duration: '6:55',
+    link: '#',
+    category: 5,
+    year: '2025',
+    featured: false
+  },
+  {
+    id: 12,
+    title: 'Webhook para notificações',
+    description: 'Configure webhooks para receber notificações de eventos importantes.',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400',
+    duration: '8:12',
+    link: '#',
+    category: 5,
+    year: '2025',
+    featured: false
   }
 ];
 

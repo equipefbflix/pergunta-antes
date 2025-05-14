@@ -42,6 +42,11 @@ export interface Subscription {
 }
 
 // Tutorial types
+export interface TutorialCategory {
+  id: number;
+  name: string;
+}
+
 export interface Tutorial {
   id: number;
   title: string;
@@ -49,6 +54,9 @@ export interface Tutorial {
   image: string;
   duration: string;
   link: string;
+  category: number;
+  year: string;
+  featured?: boolean;
 }
 
 // Banner types

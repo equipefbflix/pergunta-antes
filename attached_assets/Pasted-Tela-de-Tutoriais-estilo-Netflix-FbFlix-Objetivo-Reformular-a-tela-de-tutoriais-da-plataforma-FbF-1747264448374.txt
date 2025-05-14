@@ -1,0 +1,80 @@
+Tela de Tutoriais estilo Netflix (FbFlix)
+Objetivo:
+Reformular a tela de tutoriais da plataforma FbFlix para que fique com o layout visual e organizacional semelhante à interface principal da Netflix.
+
+🎨 Referência visual:
+Usar como base o layout da Netflix Web (como na imagem enviada), substituindo conteúdos por vídeos tutoriais da plataforma.
+
+🖼️ Design esperado:
+Nome da seção: “🎬 Tutoriais da FbFlix”
+
+Tema visual: Glassmorphism moderno
+
+Modos disponíveis: Claro e Escuro (com botão para alternar)
+
+Cores predominantes:
+
+Preto (fundo)
+
+Vermelho (destaques e botões)
+
+Branco (textos)
+
+🧩 Layout e Componentes
+1. Hero principal (destaque superior):
+Um vídeo tutorial em destaque com:
+
+Capa grande (thumbnail em widescreen)
+
+Título do vídeo
+
+Texto de descrição resumida (2 linhas)
+
+Botão “Assistir agora”
+
+Meta-informações fictícias: “2025 • FbFlix • X min”
+
+2. Seções horizontais (carrossel scroll lateral):
+Cada seção com título, por exemplo:
+
+“🔥 Mais assistidos”
+
+“📚 Básicos da Plataforma”
+
+“⚙️ Configurações e Integrações”
+
+“🛠️ Soluções avançadas”
+
+“📱 Automatizações e Cookies”
+
+Cada vídeo com:
+
+Thumbnail quadrado ou vertical
+
+Título do vídeo (estilizado como a fonte da Netflix se possível)
+
+Tooltip com descrição ao passar o mouse
+
+3. Funcionalidades do layout:
+Scroll horizontal em cada carrossel
+
+Animação suave ao hover nas miniaturas
+
+Títulos com fontes modernas e destaque em vermelho
+
+Rodapé fixo com logo “FbFlix 2025” e links futuros
+
+Totalmente responsivo (adaptar layout no mobile com scroll lateral e colunas menores)
+
+🛠️ Regras e Simulações
+Os vídeos devem ser simulados com thumbnails e links fictícios do YouTube
+
+Nenhuma API externa será usada nesta versão
+
+Nenhum backend ou banco é necessário nesta etapa
+
+Dados mock devem ser carregados direto no front-end para fins visuais
+
+Observação final:
+A experiência do usuário deve remeter à Netflix desde o primeiro contato, mas com branding e conteúdo da FbFlix, simulando uma “plataforma de streaming de tutoriais para afiliados e compradores”.
+
