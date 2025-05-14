@@ -1,0 +1,126 @@
+Título do Projeto:
+Plataforma FBFLIX – UI Demo com Glassmorphism
+
+Objetivo:
+Criar uma versão visual funcional da plataforma FbFlix para testes e demonstração de interface.
+Não haverá integração com API ou banco de dados neste momento. Todos os dados serão estáticos ou simulados (mock). A ideia é montar o front-end completo com aparência profissional e fluidez.
+
+🎨 Identidade Visual
+Estilo: Glassmorphism moderno
+
+Modos: Claro e Escuro com alternância (switch de tema)
+
+Paleta de cores:
+
+Preto (fundo predominante no modo escuro)
+
+Vermelho (destaques e botões principais)
+
+Branco (texto e contrastes)
+
+Design: Minimalista, responsivo, painéis translúcidos com blur, cantos arredondados e animações suaves
+
+📌 Funcionalidades (Mock UI)
+1. Tela de Login
+Login do Cliente
+
+Login do Admin
+
+Campos de e-mail e senha
+
+Botão “Entrar”
+
+Estilo glassmorphism e alternância de tema claro/escuro
+
+2. Dashboard do Cliente
+Exibição de saldo (mock)
+
+Cards de produtos (Proxy, Perfil, BM)
+
+Filtro por categoria
+
+Banner rotativo superior
+
+Botão “Adicionar saldo”
+
+3. Assinaturas
+Lista de assinaturas com status: Ativo, Vencido, Renovação pendente, Cancelado
+
+Botão “Renovar”
+
+Modal com detalhes (IP do proxy, vencimento, plano)
+
+4. Pedidos
+Histórico de compras (mock)
+
+Botão “Visualizar detalhes”
+
+Download simulado de arquivo .txt
+
+5. Checkout
+Produto com imagem, nome e valor
+
+Campo para inserir cupom
+
+✅ Order Bump (checkbox com item adicional, exemplo: Garantia Extra)
+
+✅ Upsell (aparece após clicar em comprar, sugerindo outro item com desconto)
+
+✅ Banner superior com prova social ou selo de garantia
+
+6. Recarga de Saldo
+Campo para inserir valor
+
+Campo para cupom de cashback
+
+Feedback visual com confirmação da recarga simulada
+
+7. Tutoriais
+Cards com thumbnails de vídeos do YouTube (ou imagem de exemplo)
+
+Título, descrição e botão “Assistir”
+
+8. Notificações
+Avisos simulados (ex: “Sua assinatura vence em 2 dias” ou “Saldo abaixo de R$ 10,00”)
+
+Exibição em pop-up ou ícone de sino
+
+9. Painel do Admin
+Dashboard com KPIs (simulados): total de usuários, pedidos, saldo
+
+Menu lateral com seções:
+
+Produtos
+
+Pedidos
+
+Assinaturas
+
+Cupons
+
+Comissões
+
+Tutoriais
+
+Banners
+
+Termos de uso
+
+Avisos
+
+✅ Extras Visuais
+Alternância entre claro/escuro com transição suave
+
+Todos os componentes devem ser responsivos (mobile first)
+
+Usar Tailwind CSS ou estilização similar para facilitar a manutenção
+
+Layouts visualmente limpos e centrados na usabilidade
+
+⚠️ Restrições Técnicas
+Nenhuma API deve ser conectada neste estágio
+
+Nenhum banco de dados será utilizado
+
+Toda a interface deve funcionar com dados mockados no front-end
+
