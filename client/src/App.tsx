@@ -46,9 +46,15 @@ function Router() {
   if (userType === "admin") {
     return (
       <Switch>
-        <Route path="/" component={AdminDashboardPage} />
-        <Route path="/admin" component={AdminDashboardPage} />
-        <Route component={NotFound} />
+        <Route path="/">
+          <AdminDashboardPage />
+        </Route>
+        <Route path="/admin">
+          <AdminDashboardPage />
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
       </Switch>
     );
   }
@@ -56,13 +62,27 @@ function Router() {
   // Se autenticado como cliente, mostrar rotas do cliente
   return (
     <Switch>
-      <Route path="/" component={DashboardPage} />
-      <Route path="/dashboard" component={DashboardPage} />
-      <Route path="/assinaturas" component={SubscriptionsPage} />
-      <Route path="/pedidos" component={OrdersPage} />
-      <Route path="/tutoriais" component={TutorialsPage} />
-      <Route path="/checkout/:productId" component={CheckoutPage} />
-      <Route component={NotFound} />
+      <Route path="/">
+        <DashboardPage />
+      </Route>
+      <Route path="/dashboard">
+        <DashboardPage />
+      </Route>
+      <Route path="/assinaturas">
+        <SubscriptionsPage />
+      </Route>
+      <Route path="/pedidos">
+        <OrdersPage />
+      </Route>
+      <Route path="/tutoriais">
+        <TutorialsPage />
+      </Route>
+      <Route path="/checkout/:productId">
+        <CheckoutPage />
+      </Route>
+      <Route>
+        <NotFound />
+      </Route>
     </Switch>
   );
 }
