@@ -23,6 +23,11 @@ export interface Product {
   category: ProductCategory;
   tags: string[];
   period: string;
+  stock?: number;
+  soldToday?: number;
+  temperature?: number;
+  isPopular?: boolean;
+  isLowStock?: boolean;
 }
 
 // Subscription types

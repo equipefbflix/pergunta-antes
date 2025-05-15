@@ -32,7 +32,11 @@ export const products: Product[] = [
     image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
     category: 'proxy',
     tags: ['Mais Popular'],
-    period: '30 dias de acesso'
+    period: '30 dias de acesso',
+    stock: 8,
+    soldToday: 5,
+    temperature: 75,
+    isPopular: true
   },
   {
     id: 2,
@@ -42,7 +46,11 @@ export const products: Product[] = [
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
     category: 'perfil',
     tags: [],
-    period: '60 dias de acesso'
+    period: '60 dias de acesso',
+    stock: 2,
+    soldToday: 3,
+    temperature: 60,
+    isLowStock: true
   },
   {
     id: 3,
@@ -52,7 +60,10 @@ export const products: Product[] = [
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
     category: 'bm',
     tags: ['Novo'],
-    period: '90 dias de acesso'
+    period: '90 dias de acesso',
+    stock: 10,
+    soldToday: 2,
+    temperature: 40
   }
 ];
 
