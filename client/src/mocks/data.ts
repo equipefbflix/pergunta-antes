@@ -1,4 +1,4 @@
-import { Product, Subscription, Tutorial, Order, User, Banner, Notification } from '@/types';
+import { Product, Subscription, Tutorial, Order, User, Banner, Notification, Category, ProductContent } from '@/types';
 
 // Mock Users
 export const users: User[] = [
@@ -22,6 +22,67 @@ export const users: User[] = [
   }
 ];
 
+// Categorias de produtos
+export const categories: Category[] = [
+  {
+    id: 1,
+    name: 'Proxy',
+    description: 'Proxies dedicados para uso em campanhas',
+    productCount: 2
+  },
+  {
+    id: 2,
+    name: 'Perfil',
+    description: 'Contas e perfis verificados',
+    productCount: 2
+  },
+  {
+    id: 3,
+    name: 'BM',
+    description: 'Business Managers com diferentes limites',
+    productCount: 1
+  },
+  {
+    id: 4,
+    name: 'Páginas',
+    description: 'Páginas verificadas e com histórico',
+    productCount: 0
+  },
+  {
+    id: 5,
+    name: 'Contingência',
+    description: 'Planos de recuperação e contingência',
+    productCount: 0
+  }
+];
+
+// Conteúdos dos produtos
+export const productContents: ProductContent[] = [
+  // Proxy Premium
+  { id: 1, productId: 1, type: 'file', content: '45.123.45.67:8080:user:pass', fileName: 'proxy1.txt', fileType: 'text/plain', isAvailable: true },
+  { id: 2, productId: 1, type: 'file', content: '72.234.21.45:8080:user:pass', fileName: 'proxy2.txt', fileType: 'text/plain', isAvailable: true },
+  { id: 3, productId: 1, type: 'file', content: '92.118.39.25:8080:user:pass', fileName: 'proxy3.txt', fileType: 'text/plain', isAvailable: true },
+  { id: 4, productId: 1, type: 'file', content: '103.245.67.189:8080:user:pass', fileName: 'proxy4.txt', fileType: 'text/plain', isAvailable: false, soldAt: '2023-05-12T15:30:00' },
+  
+  // Proxy Compartilhado (estoque interno)
+  { id: 5, productId: 4, type: 'file', content: '187.123.45.67:8080:user:pass', fileName: 'proxy_shared1.txt', fileType: 'text/plain', isAvailable: true },
+  { id: 6, productId: 4, type: 'file', content: '187.123.45.68:8080:user:pass', fileName: 'proxy_shared2.txt', fileType: 'text/plain', isAvailable: true },
+  
+  // Perfil Verificado
+  { id: 7, productId: 2, type: 'file', content: 'email:senha:2fa_backup', fileName: 'perfil1.txt', fileType: 'text/plain', isAvailable: true },
+  { id: 8, productId: 2, type: 'file', content: 'email:senha:2fa_backup', fileName: 'perfil2.txt', fileType: 'text/plain', isAvailable: true },
+  { id: 9, productId: 2, type: 'file', content: 'email:senha:2fa_backup', fileName: 'perfil3.txt', fileType: 'text/plain', isAvailable: false, soldAt: '2023-05-13T10:15:00' },
+  
+  // Perfil Novo (estoque interno)
+  { id: 10, productId: 5, type: 'file', content: 'email:senha:backup', fileName: 'perfil_novo1.txt', fileType: 'text/plain', isAvailable: true },
+  { id: 11, productId: 5, type: 'file', content: 'email:senha:backup', fileName: 'perfil_novo2.txt', fileType: 'text/plain', isAvailable: true },
+  
+  // Business Manager
+  { id: 12, productId: 3, type: 'link', content: 'https://business.facebook.com/business_locations/?business_id=1234567890', isAvailable: true },
+  { id: 13, productId: 3, type: 'link', content: 'https://business.facebook.com/business_locations/?business_id=0987654321', isAvailable: true },
+  { id: 14, productId: 3, type: 'link', content: 'https://business.facebook.com/business_locations/?business_id=5678901234', isAvailable: false, soldAt: '2023-05-14T09:20:00' },
+];
+
 // Mock Products
 export const products: Product[] = [
   {
@@ -31,12 +92,16 @@ export const products: Product[] = [
     price: 89.90,
     image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
     category: 'proxy',
+    productType: 'proxy',
     tags: ['Mais Popular'],
     period: '30 dias de acesso',
     stock: 8,
     soldToday: 5,
     temperature: 75,
-    isPopular: true
+    isPopular: true,
+    status: 'active',
+    dateCreated: '2023-04-15T10:00:00',
+    dateModified: '2023-05-10T14:30:00'
   },
   {
     id: 2,
@@ -45,12 +110,16 @@ export const products: Product[] = [
     price: 149.90,
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
     category: 'perfil',
+    productType: 'perfil',
     tags: [],
     period: '60 dias de acesso',
     stock: 2,
     soldToday: 3,
     temperature: 60,
-    isLowStock: true
+    isLowStock: true,
+    status: 'active',
+    dateCreated: '2023-04-16T11:30:00',
+    dateModified: '2023-05-11T09:15:00'
   },
   {
     id: 3,
@@ -59,11 +128,47 @@ export const products: Product[] = [
     price: 299.90,
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
     category: 'bm',
+    productType: 'bm',
     tags: ['Novo'],
     period: '90 dias de acesso',
     stock: 10,
     soldToday: 2,
-    temperature: 40
+    temperature: 40,
+    status: 'active',
+    dateCreated: '2023-04-18T14:20:00',
+    dateModified: '2023-05-12T16:45:00'
+  },
+  
+  // Produtos em estoque interno
+  {
+    id: 4,
+    title: 'Proxy Compartilhado',
+    description: 'Proxy compartilhado para uso geral. Boa velocidade e custo acessível.',
+    price: 49.90,
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
+    category: 'proxy',
+    productType: 'proxy',
+    tags: ['compartilhado', 'custo-beneficio'],
+    period: '30 dias',
+    stock: 2,
+    status: 'internal_stock',
+    dateCreated: '2023-05-01T09:00:00',
+    dateModified: '2023-05-01T09:00:00'
+  },
+  {
+    id: 5,
+    title: 'Perfil Novo',
+    description: 'Conta recém criada sem histórico. Ideal para testes iniciais.',
+    price: 79.90,
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400',
+    category: 'perfil',
+    productType: 'perfil',
+    tags: ['novo', 'iniciante'],
+    period: 'Acesso único',
+    stock: 2,
+    status: 'internal_stock',
+    dateCreated: '2023-05-02T10:30:00',
+    dateModified: '2023-05-02T10:30:00'
   }
 ];
 

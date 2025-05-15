@@ -13,6 +13,27 @@ export interface User {
 
 // Product types
 export type ProductCategory = 'proxy' | 'perfil' | 'bm' | 'all';
+export type ProductType = 'proxy' | 'perfil' | 'bm' | 'pagina' | 'contingencia' | 'outro';
+export type ProductTag = 'popular' | 'promocao' | 'alta_demanda' | 'novo' | 'none';
+export type ProductStatus = 'active' | 'inactive' | 'internal_stock';
+
+export interface ProductContent {
+  id: number;
+  productId: number;
+  type: 'file' | 'link';
+  content: string;
+  fileName?: string;
+  fileType?: string;
+  isAvailable: boolean;
+  soldAt?: string;
+}
+
+export interface Category {
+  id: number;
+  name: string;
+  description?: string;
+  productCount: number;
+}
 
 export interface Product {
   id: number;
@@ -21,6 +42,7 @@ export interface Product {
   price: number;
   image: string;
   category: ProductCategory;
+  productType: ProductType;
   tags: string[];
   period: string;
   stock?: number;
@@ -28,6 +50,10 @@ export interface Product {
   temperature?: number;
   isPopular?: boolean;
   isLowStock?: boolean;
+  status: ProductStatus;
+  contents?: ProductContent[];
+  dateCreated: string;
+  dateModified: string;
 }
 
 // Subscription types

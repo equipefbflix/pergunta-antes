@@ -1,0 +1,106 @@
+a tela de produtos está em branco vamos construir.
+
+Objetivo:
+Construir uma tela completa e moderna para cadastrar, editar e excluir produtos e categorias, com funcionalidades de upload de arquivos, controle automatizado de quantidade disponível, além de um sistema separado de estoque interno invisível para o cliente.
+
+🖥️ Tela: Gerenciamento de Produtos
+Visual:
+
+Design escuro com tons de preto, vermelho e branco
+
+Estilo glassmorphism com bordas suaves e efeitos de blur
+
+Disposição visual clara: separação por seções (produtos, categorias, estoque interno)
+
+🧱 Funcionalidades da Tela
+1. Cadastrar Produto
+Campos obrigatórios:
+
+Nome do produto
+
+Descrição
+
+Categoria (dropdown)
+
+Tipo do produto (perfil, página, BM, proxy etc.)
+
+Upload do conteúdo:
+
+.TXT ou .PDF (para perfis e páginas)
+
+Link (URL externa para BMs)
+
+Definir preço
+
+Imagem do produto
+
+Tag: popular, promoção, alta demanda etc.
+
+2. Quantidade disponível
+Calculada automaticamente com base:
+
+Na quantidade de arquivos ou links enviados
+
+Menos a quantidade vendida
+
+Aparece como “Disponível para venda” no painel
+
+3. Gestão de Categorias
+Adicionar nova categoria
+
+Editar ou excluir categoria existente
+
+Associar categorias aos produtos
+
+4. Upload de Arquivos
+Permitir upload múltiplo
+
+Validar tipo do arquivo:
+
+.txt e .pdf = válidos para perfis e páginas
+
+links/URLs = válidos para BMs
+
+Armazenar internamente com rastreamento por produto
+
+5. Estoque Interno (Separado do público)
+Seção especial chamada "Estoque Interno"
+
+Aqui os produtos ficam fora da loja, visíveis apenas ao admin
+
+Pode-se:
+
+Cadastrar arquivos normalmente
+
+Organizar por categoria e tipo
+
+Deixar marcados como "Para reposição"
+
+✅ Cada item no estoque terá um botão “Enviar para venda”, onde é possível:
+
+Definir categoria
+
+Definir imagem, nome, descrição, preço etc.
+
+O item passa a entrar automaticamente no estoque “disponível para o cliente”
+
+6. Outros Recursos
+Filtros por tipo de produto, categoria, status (ativo/inativo/estoque interno)
+
+Barra de busca por nome
+
+Botão de status para ativar/desativar produto
+
+Ações em cada linha: Editar / Excluir / Duplicar produto
+
+Observações Finais:
+
+O sistema deve gerenciar tudo de forma local inicialmente (sem integrar banco ainda)
+
+Interface deve ser responsiva e moderna
+
+Pode simular o backend com armazenamento temporário em variáveis locais
+
+OBSERVAÇÃO IMPORTANTE:
+OS ITENS CADASTRADOS PARA VENDA, DEVEM APARECER PARA O CLIENTE, NO PAINEL DO CLIENTE.
+JÁ DEVE SER FUNCIONAL ASSIM QUE APLICADO AQUI NO PAINEL ADM, JÁ DEVE ATUALIZAR EM TEMPO REAL PARA O CLIENTE
