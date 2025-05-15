@@ -4,30 +4,42 @@ import ThemeToggle from "@/components/layout/ThemeToggle";
 import Sidebar from "@/components/layout/Sidebar";
 import KpiCards from "@/components/admin/KpiCards";
 import RecentOrders from "@/components/admin/RecentOrders";
+import AdminCharts from "@/components/admin/AdminCharts";
+import TopCustomers from "@/components/admin/TopCustomers";
 import { orders } from "@/mocks/data";
-import { Bell } from "lucide-react";
+import { Bell, LayoutDashboard, Menu } from "lucide-react";
 
 export function AdminDashboardPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const glassStyles = useGlassmorphism();
 
   return (
-    <div className="flex h-screen overflow-hidden bg-background">
+    <div className="flex h-screen overflow-hidden bg-background relative">
+      {/* Background gradient effects */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-40">
+        <div className="absolute top-10 right-20 w-72 h-72 bg-red-500 rounded-full mix-blend-multiply blur-[80px] opacity-30"></div>
+        <div className="absolute bottom-10 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply blur-[80px] opacity-20"></div>
+      </div>
+      
       {/* Sidebar */}
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       
       {/* Main Content */}
       <div className="flex-1 overflow-y-auto">
-        <header className={`${glassStyles.className} sticky top-0 z-10`}>
+        <header className={`${glassStyles.className} sticky top-0 z-10 border-b border-gray-800`}>
           <div className="px-6 py-3 flex items-center justify-between">
-            <button 
-              className="md:hidden text-gray-400"
-              onClick={() => setSidebarOpen(true)}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
+            <div className="flex items-center">
+              <button 
+                className="md:hidden text-gray-400 mr-3"
+                onClick={() => setSidebarOpen(true)}
+              >
+                <Menu className="h-6 w-6" />
+              </button>
+              <div className="flex items-center">
+                <LayoutDashboard className="text-primary h-5 w-5 mr-2" />
+                <h1 className="text-white font-medium">Administrador do painel</h1>
+              </div>
+            </div>
             <div className="flex items-center space-x-4">
               <div className="relative">
                 <button className="relative">
@@ -37,18 +49,22 @@ export function AdminDashboardPage() {
                   </span>
                 </button>
               </div>
-              <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center border border-gray-600/50">
                 <span className="text-white font-medium text-sm">AD</span>
               </div>
             </div>
           </div>
         </header>
         
-        <main className="p-6">
-          <h2 className="text-xl font-bold dark:text-white text-gray-800 mb-6">Dashboard Admin</h2>
-          
+        <main className="px-6 py-8">
           {/* KPI Cards */}
           <KpiCards />
+          
+          {/* Advanced Charts */}
+          <AdminCharts />
+          
+          {/* Top Customers Ranking */}
+          <TopCustomers />
           
           {/* Recent Orders */}
           <RecentOrders orders={orders} />

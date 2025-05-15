@@ -1,0 +1,97 @@
+📌 Objetivo:
+Atualizar completamente o painel de administrador para exibir dados mais úteis e estratégicos, com layout visual moderno, clean, darkmode com detalhes em vermelho e branco, no estilo glassmorphism, e com foco em métricas reais do negócio e controle inteligente.
+
+🖥️ Visão Geral do Dashboard
+Estilo visual:
+
+Modo escuro com cores: preto como fundo, vermelho para destaques, branco e cinza para texto
+
+Glassmorphism: blur nos cards, bordas suaves e luminosas
+
+Ícones modernos e gráficos animados
+
+🧱 Cards Principais (Topo do Dashboard):
+👥 Clientes Ativos
+
+Mostra total de clientes com saldo, pedidos ou interações recentes
+
+Indicador de variação (ex: +12% vs mês anterior)
+
+🔁 Proxys Ativas
+
+Mostra apenas as assinaturas de proxies atualmente ativas
+
+Indicador de variação
+
+📦 Assinaturas (Contingência)
+
+Novo serviço (diferente de proxy): planos de contingência por assinatura
+
+Mostra número total de planos ativos
+
+🧾 Total de Transações
+
+Total de transações finalizadas (pagas) na plataforma
+
+📊 Itens Vendidos
+
+Total de unidades vendidas (soma de todos os produtos)
+
+Filtro por produto (dropdown): permite ver quantos foram vendidos de cada item
+
+🏦 Saldo em Conta dos Clientes
+
+Valor total em real (R$) de todos os saldos somados dos clientes na plataforma
+
+Exibe como se fosse o “banco interno”
+
+🏅 Ranking de Clientes (Top Gastadores)
+Seção chamada: Top 10 Clientes
+
+Mostrar os clientes que mais gastaram:
+
+Nome ou email (ou ID)
+
+Total gasto (R$)
+
+Quantidade de pedidos
+
+Ticket médio
+
+Filtros:
+
+Hoje, Semana, Mês, Ano
+
+📈 Gráficos e Métricas Avançadas
+Adicionar seção visual com gráficos interativos:
+
+📊 Gráfico de Barras: Itens mais vendidos
+
+📈 Linha do Tempo: Faturamento diário/mensal
+
+🍰 Pizza: Distribuição de tipo de produto (perfil, proxy, BM, assinatura etc.)
+
+📥 Gráfico de Saldo em Conta: crescimento do saldo acumulado na plataforma
+
+🛒 Conversão por Produto: taxa de conversão por item
+
+📋 Pedidos Recentes (Manter com melhorias)
+Melhorar estilo visual
+
+Cores dos status modernizadas (Ex: Verde, Laranja, Vermelho com efeito neon suave)
+
+Incluir ícones nos status
+
+Incluir ícone de produto ao lado do nome (miniatura)
+
+Botão “Ver todos” leva à página de listagem completa com filtro por data/status
+
+🔍 Extras
+Tudo responsivo
+
+Design adaptado para modo claro no futuro
+
+Layout minimalista com bordas arredondadas, leve sombra e feedback visual nas interações (hover, click)
+
+Esse dashboard precisa ser elegante, fluido e inteligente, trazendo insights reais de vendas e operação, ideal para uma plataforma em escala como a FbFlix.
+

@@ -356,31 +356,166 @@ export const notifications: Notification[] = [
 
 // Mock KPI Data
 export const kpiData = {
-  totalUsers: {
+  activeClients: {
     value: 1248,
     percentChange: 12,
     icon: 'users',
     color: 'indigo'
   },
-  totalOrders: {
-    value: 3576,
+  activeProxies: {
+    value: 456,
     percentChange: 8,
-    icon: 'shopping-cart',
+    icon: 'shield',
     color: 'green'
   },
-  revenue: {
+  contingencySubscriptions: {
+    value: 92,
+    percentChange: 24,
+    icon: 'life-buoy',
+    color: 'amber'
+  },
+  totalTransactions: {
+    value: 3576,
+    percentChange: 8,
+    icon: 'receipt',
+    color: 'teal'
+  },
+  itemsSold: {
+    value: 4328,
+    percentChange: 15,
+    icon: 'package',
+    color: 'purple'
+  },
+  clientBalance: {
     value: 287492,
     percentChange: 17,
-    icon: 'dollar-sign',
+    icon: 'wallet',
     color: 'primary'
-  },
-  activeSubscriptions: {
-    value: 892,
-    percentChange: 5,
-    icon: 'sync',
-    color: 'blue'
   }
 };
+
+// Mock Chart Data
+export const chartData = {
+  topProducts: [
+    { name: "Proxy Premium", value: 187 },
+    { name: "Perfil Verificado", value: 134 },
+    { name: "Business Manager", value: 98 },
+    { name: "Serviço de Contingência", value: 56 },
+    { name: "Outros", value: 42 }
+  ],
+  dailyRevenue: [
+    { date: "01/05", value: 12540 },
+    { date: "02/05", value: 14230 },
+    { date: "03/05", value: 9800 },
+    { date: "04/05", value: 11670 },
+    { date: "05/05", value: 13890 },
+    { date: "06/05", value: 18450 },
+    { date: "07/05", value: 16230 }
+  ],
+  productDistribution: [
+    { name: "Proxy", value: 45 },
+    { name: "Perfil", value: 30 },
+    { name: "BM", value: 15 },
+    { name: "Contingência", value: 10 }
+  ],
+  balanceGrowth: [
+    { month: "Jan", value: 120000 },
+    { month: "Fev", value: 145000 },
+    { month: "Mar", value: 190000 },
+    { month: "Abr", value: 220000 },
+    { month: "Mai", value: 287492 }
+  ],
+  conversionRates: [
+    { product: "Proxy Premium", rate: 68 },
+    { product: "Perfil Verificado", rate: 52 },
+    { product: "Business Manager", rate: 47 },
+    { product: "Serviço de Contingência", rate: 72 }
+  ]
+};
+
+// Mock Top Customers Data
+export const topCustomers = [
+  { 
+    id: 1, 
+    name: "João Dias", 
+    email: "joao@example.com", 
+    totalSpent: 14980, 
+    orderCount: 12, 
+    averageTicket: 1248.33 
+  },
+  { 
+    id: 3, 
+    name: "Maria Silva", 
+    email: "maria@example.com", 
+    totalSpent: 9240, 
+    orderCount: 8, 
+    averageTicket: 1155.00 
+  },
+  { 
+    id: 4, 
+    name: "Ricardo Santos", 
+    email: "ricardo@example.com", 
+    totalSpent: 7690, 
+    orderCount: 6, 
+    averageTicket: 1281.67 
+  },
+  { 
+    id: 8, 
+    name: "Fernanda Lima", 
+    email: "fernanda@example.com", 
+    totalSpent: 6780, 
+    orderCount: 5, 
+    averageTicket: 1356.00 
+  },
+  { 
+    id: 12, 
+    name: "Carlos Mendes", 
+    email: "carlos@example.com", 
+    totalSpent: 5890, 
+    orderCount: 5, 
+    averageTicket: 1178.00 
+  },
+  { 
+    id: 16, 
+    name: "Patrícia Oliveira", 
+    email: "patricia@example.com", 
+    totalSpent: 4990, 
+    orderCount: 4, 
+    averageTicket: 1247.50 
+  },
+  { 
+    id: 19, 
+    name: "Gabriel Martins", 
+    email: "gabriel@example.com", 
+    totalSpent: 4560, 
+    orderCount: 4, 
+    averageTicket: 1140.00 
+  },
+  { 
+    id: 22, 
+    name: "Luciana Costa", 
+    email: "luciana@example.com", 
+    totalSpent: 3870, 
+    orderCount: 3, 
+    averageTicket: 1290.00 
+  },
+  { 
+    id: 25, 
+    name: "André Pereira", 
+    email: "andre@example.com", 
+    totalSpent: 3250, 
+    orderCount: 3, 
+    averageTicket: 1083.33 
+  },
+  { 
+    id: 27, 
+    name: "Camila Rocha", 
+    email: "camila@example.com", 
+    totalSpent: 2980, 
+    orderCount: 3, 
+    averageTicket: 993.33 
+  }
+];
 
 // Extra product for checkout
 export const orderBump = {
