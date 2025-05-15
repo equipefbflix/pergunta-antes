@@ -12,6 +12,7 @@ import AdminDashboardPage from "@/pages/AdminDashboardPage";
 import SubscriptionsPage from "@/pages/SubscriptionsPage";
 import OrdersPage from "@/pages/OrdersPage";
 import TutorialsPage from "@/pages/TutorialsPage";
+import AnunciosPage from "@/pages/AnunciosPage";
 import NotFound from "@/pages/not-found";
 import NotificationPopup from "@/components/NotificationPopup";
 import { useEffect } from "react";
@@ -76,6 +77,9 @@ function Router() {
       </Route>
       <Route path="/tutoriais">
         <TutorialsPage />
+      </Route>
+      <Route path="/anuncios">
+        <AnunciosPage />
       </Route>
       <Route path="/checkout/:productId">
         <CheckoutPage />

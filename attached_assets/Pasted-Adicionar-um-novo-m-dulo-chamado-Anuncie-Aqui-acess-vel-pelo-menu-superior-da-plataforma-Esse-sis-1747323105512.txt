@@ -1,0 +1,113 @@
+Adicionar um novo módulo chamado “Anuncie Aqui” acessível pelo menu superior da plataforma. Esse sistema permitirá que usuários criem anúncios personalizados usando o saldo que possuem em conta, escolhendo o tipo de posicionamento (banner, pop-up, página de checkout etc.), com visual clean e moderno.
+
+🧭 Navegação e Acesso
+Novo botão no menu superior:
+📢 Anuncie Aqui
+
+Ícone de megafone
+
+Leva à nova tela exclusiva de gerenciamento de anúncios
+
+🖥️ Estrutura da Página “Anuncie Aqui”
+Estilo visual:
+
+Glassmorphism + dark mode e light mode
+
+Paleta de cores: fundo preto, detalhes em vermelho e branco
+
+Layout moderno, responsivo e visualmente dinâmico
+
+🧱 Componentes da Tela:
+1. Header da página
+Título grande: Anuncie em nosso site
+
+Subtítulo explicativo: Promova seu negócio dentro da plataforma usando o saldo disponível. Escolha onde quer aparecer para ganhar mais visibilidade.
+
+2. Tipos de Posicionamento (em forma de cards clicáveis com ícones):
+Cada card terá:
+
+Nome do posicionamento
+
+Preço em saldo (ex: 100, 200, 300)
+
+Miniatura de visualização de como vai aparecer
+
+Botão: Selecionar
+
+Opções disponíveis:
+
+📌 Banner principal (topo da home)
+
+🎯 Página de checkout (antes do botão de compra)
+
+💬 Pop-up (ao entrar na plataforma)
+
+📦 Página inicial (entre os produtos)
+
+📄 Página de anúncios dedicada
+
+3. Formulário de Criação do Anúncio
+Campos:
+
+Nome do anúncio
+
+Imagem (upload do banner visual)
+
+Link de redirecionamento
+
+Escolha de posicionamento (obrigatório)
+
+Texto de descrição curta (opcional)
+
+Botão Inserir anúncio agora
+
+Validação:
+
+Verifica saldo do cliente
+
+Desconta o valor automaticamente
+
+Adiciona o anúncio à fila de exibição
+
+4. Painel lateral (Resumo do Anúncio)
+Mostrar:
+
+Tipo de anúncio selecionado
+
+Custo
+
+Visualização do banner
+
+Botão para confirmar inserção (Confirmar e Inserir)
+
+5. Histórico de Anúncios (aba ou painel abaixo)
+Exibir os anúncios já criados pelo usuário:
+
+Nome
+
+Posição
+
+Status (ativo, expirado)
+
+Data de criação
+
+Botão Editar ou Renovar
+
+🛠️ Funcionalidade Técnica
+Não requer integração com API neste momento
+
+Não conectado a banco de dados
+
+Todas as interações devem ser mockadas ou simuladas localmente por enquanto (ex: saldo fake, simulação de exibição)
+
+Layout e componentes devem ser separados para futura integração
+
+🔍 Extras e Detalhes:
+Mostrar uma barra de destaque com texto tipo “🔥 Espaço limitado! Reserve seu anúncio agora.”
+
+Adicionar aviso se o saldo for insuficiente
+
+Cards com efeito hover animado (leve zoom e sombra)
+
+Obs: Esse recurso deve respeitar a identidade visual da FbFlix, com estilo minimalista, profissional, modo claro/escuro e visual moderno com bordas arredondadas e efeitos de profundidade (glassmorphism).
+
