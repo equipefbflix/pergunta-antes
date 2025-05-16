@@ -1,0 +1,66 @@
+Criar uma nova seção no menu chamada "Proxy", com uma tela dedicada para gestão dos proxies contratados pelos clientes, separando este controle da atual tela de assinaturas. A gestão será feita em um painel simples e funcional com status, ações rápidas e organização clara.
+
+🖥️ Nova Tela: Proxy
+🔸 Visível no menu lateral como nova seção: Proxy
+
+🧱 Estrutura da Tela Proxy
+Layout visual:
+
+Estilo moderno, minimalista, com modo claro/escuro
+
+Paleta de cores: preto, vermelho e branco
+
+Estilo glassmorphism com painéis translúcidos e botões interativos
+
+📊 Painel com Resumo no topo (dashboard simplificado)
+Exibir caixas-resumo com os seguintes dados:
+
+✅ Proxies Ativos
+
+🔄 Para renovar hoje
+
+❌ Vencidos
+
+🚫 Cancelados
+
+Essas caixas funcionam como filtros. Ao clicar, a tabela abaixo é filtrada pelo respectivo status.
+
+Tabela Interativa de Proxies:
+Cada proxy será exibido em uma linha, com as seguintes colunas:
+
+Proxy	Perfil	Status	Vencimento	Renovação automática	Ações
+185.14.238.7:31404:abc123	perfil_nx789	Ativo	20/05/2025	Ativada	[Copiar] [Trocar] [Renovar] [Nota]
+🛠️ Funcionalidades da Tabela:
+🔁 Renovar Proxy (botão individual por linha)
+
+✅ Ativar/Desativar Renovação Automática
+
+📋 Adicionar nota abaixo do proxy (campo editável para observações)
+
+📎 Botão de copiar proxy com ícone (📋)
+
+🔄 Botão de trocar proxy com ícone (♻️)
+
+⚙️ Extra:
+Filtro por status (Ativo, Vencido, Cancelado, Auto-renovação ON/OFF)
+
+Filtro por data de vencimento
+
+Filtro por proxy (busca direta por IP ou código)
+
+🔁 Mudança na Tela Atual de "Assinaturas"
+Nova função: Estoque pessoal do cliente de produtos recorrentes
+
+A atual tela de Assinaturas será mantida, mas:
+
+Passará a exibir produtos recorrentes como perfis, páginas e BMs
+
+Funciona como uma espécie de estoque pessoal do cliente
+
+Produtos listados ali não são proxies e não devem aparecer na nova tela Proxy
+
+Resumo da separação:
+
+Antigo	Novo
+Assinaturas (mistura tudo)	Proxy = só proxies contratados
+Assinaturas = agora será apenas para perfis/páginas/BMs	

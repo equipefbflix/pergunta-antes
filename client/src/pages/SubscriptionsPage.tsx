@@ -15,7 +15,8 @@ export function SubscriptionsPage() {
         <div className="mb-6">
           <h1 className="text-2xl font-bold dark:text-white text-gray-800">Suas Assinaturas</h1>
           <p className="text-sm dark:text-gray-300 text-gray-600 mt-1">
-            Gerencie todos os seus serviços ativos e pendentes
+            Gerencie seus perfis, páginas e BMs ativos
+            <span className="ml-2 text-primary">(para gerenciar proxies, utilize a seção Proxy)</span>
           </p>
         </div>
         

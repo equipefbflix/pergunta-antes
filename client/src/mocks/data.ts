@@ -1,4 +1,4 @@
-import { Product, Subscription, Tutorial, Order, User, Banner, Notification, Category, ProductContent } from '@/types';
+import { Product, Subscription, Tutorial, Order, User, Banner, Notification, Category, ProductContent, Proxy } from '@/types';
 
 // Mock Users
 export const users: User[] = [
@@ -629,3 +629,87 @@ export const orderBump = {
   description: 'Estenda sua garantia para 30 dias e ganhe suporte prioritário.',
   price: 19.90
 };
+
+// Mock Proxies
+export const proxies: Proxy[] = [
+  {
+    id: 1,
+    ipAddress: "185.14.238.7",
+    port: "31404",
+    username: "user_abc123",
+    password: "pass_xyz789",
+    profileName: "perfil_nx789",
+    status: "active",
+    expirationDate: "2025-05-20T23:59:59",
+    autoRenewal: true,
+    note: "Proxy para conta principal do Facebook"
+  },
+  {
+    id: 2,
+    ipAddress: "103.126.65.89",
+    port: "8080",
+    username: "user_def456",
+    password: "pass_uvw321",
+    profileName: "perfil_ab123",
+    status: "active",
+    expirationDate: "2025-04-15T23:59:59",
+    autoRenewal: false
+  },
+  {
+    id: 3,
+    ipAddress: "45.89.173.142",
+    port: "3128",
+    username: "user_ghi789",
+    password: "pass_rst654",
+    profileName: "perfil_cd456",
+    status: "expired",
+    expirationDate: "2024-02-22T23:59:59",
+    autoRenewal: true,
+    note: "Proxy para testes de anúncios"
+  },
+  {
+    id: 4,
+    ipAddress: "23.145.67.210",
+    port: "8888",
+    username: "user_jkl012",
+    password: "pass_opq987",
+    profileName: "perfil_ef789",
+    status: "cancelled",
+    expirationDate: "2024-01-10T23:59:59",
+    autoRenewal: false
+  },
+  {
+    id: 5,
+    ipAddress: "178.62.102.63",
+    port: "1080",
+    username: "user_mno345",
+    password: "pass_mln456",
+    profileName: "perfil_gh012",
+    status: "active",
+    expirationDate: "2025-03-18T23:59:59",
+    autoRenewal: true
+  },
+  {
+    id: 6,
+    ipAddress: "91.203.145.72",
+    port: "9090",
+    username: "user_pqr678",
+    password: "pass_kji321",
+    profileName: "perfil_ij345",
+    status: "active",
+    expirationDate: new Date(new Date().setDate(new Date().getDate() + 1)).toISOString(),
+    autoRenewal: false,
+    note: "Vence amanhã, renovação manual necessária"
+  },
+  {
+    id: 7,
+    ipAddress: "5.252.179.36",
+    port: "3333",
+    username: "user_stu901",
+    password: "pass_hgf654",
+    profileName: "perfil_kl678",
+    status: "active",
+    expirationDate: new Date(new Date().setDate(new Date().getDate() + 1)).toISOString(),
+    autoRenewal: true
+  }
+];

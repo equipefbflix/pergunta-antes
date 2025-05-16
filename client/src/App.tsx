@@ -14,6 +14,7 @@ import SubscriptionsPage from "@/pages/SubscriptionsPage";
 import OrdersPage from "@/pages/OrdersPage";
 import TutorialsPage from "@/pages/TutorialsPage";
 import AnunciosPage from "@/pages/AnunciosPage";
+import ProxyPage from "@/pages/ProxyPage";
 import NotFound from "@/pages/not-found";
 import NotificationPopup from "@/components/NotificationPopup";
 import { useEffect } from "react";
@@ -84,6 +85,9 @@ function Router() {
       </Route>
       <Route path="/anuncios">
         <AnunciosPage />
+      </Route>
+      <Route path="/proxy">
+        <ProxyPage />
       </Route>
       <Route path="/checkout/:productId">
         <CheckoutPage />

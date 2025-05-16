@@ -72,6 +72,22 @@ export interface Subscription {
   };
 }
 
+// Proxy types
+export type ProxyStatus = 'active' | 'expired' | 'cancelled';
+
+export interface Proxy {
+  id: number;
+  ipAddress: string;
+  port: string;
+  username: string;
+  password: string;
+  profileName: string;
+  status: ProxyStatus;
+  expirationDate: string;
+  autoRenewal: boolean;
+  note?: string;
+}
+
 // Tutorial types
 export interface TutorialCategory {
   id: number;

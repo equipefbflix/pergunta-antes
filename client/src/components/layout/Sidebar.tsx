@@ -11,7 +11,8 @@ import {
   Image,
   FileText,
   Bell,
-  X
+  X,
+  Network
 } from "lucide-react";
 
 interface SidebarProps {
@@ -28,6 +29,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
     { icon: <Package className="mr-3 h-5 w-5" />, name: "Produtos", path: "/admin/produtos" },
     { icon: <ShoppingCart className="mr-3 h-5 w-5" />, name: "Pedidos", path: "/admin/pedidos" },
     { icon: <RefreshCw className="mr-3 h-5 w-5" />, name: "Assinaturas", path: "/admin/assinaturas" },
+    { icon: <Network className="mr-3 h-5 w-5" />, name: "Proxy", path: "/proxy" },
     { icon: <Tag className="mr-3 h-5 w-5" />, name: "Cupons", path: "/admin/cupons" },
     { icon: <HandCoins className="mr-3 h-5 w-5" />, name: "Comissões", path: "/admin/comissoes" },
     { icon: <Video className="mr-3 h-5 w-5" />, name: "Tutoriais", path: "/admin/tutoriais" },
