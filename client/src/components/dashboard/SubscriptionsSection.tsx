@@ -16,7 +16,15 @@ export function SubscriptionsSection({
   showViewAll = true 
 }: SubscriptionsSectionProps) {
   const glassStyles = useGlassmorphism();
-  const displaySubscriptions = limit ? subscriptions.slice(0, limit) : subscriptions;
+  
+  // Filtrando para mostrar apenas assinaturas que não são proxies
+  const filteredSubscriptions = subscriptions.filter(sub => 
+    !sub.productTitle.toLowerCase().includes('proxy') && !sub.details.ip
+  );
+  
+  const displaySubscriptions = limit 
+    ? filteredSubscriptions.slice(0, limit) 
+    : filteredSubscriptions;
 
   // Function to get icon component based on subscription icon string
   const getIcon = (iconName: string) => {

@@ -86,7 +86,7 @@ function Router() {
       <Route path="/anuncios">
         <AnunciosPage />
       </Route>
-      <Route path="/proxy">
+      <Route path="/proxies">
         <ProxyPage />
       </Route>
       <Route path="/checkout/:productId">
