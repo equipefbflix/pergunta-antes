@@ -12,7 +12,8 @@ import {
   FileText,
   Bell,
   X,
-  Network
+  Network,
+  CreditCard
 } from "lucide-react";
 
 interface SidebarProps {
