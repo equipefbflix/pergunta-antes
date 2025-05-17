@@ -123,11 +123,16 @@ export interface Order {
   id: number;
   userId: number;
   userName: string;
+  userEmail?: string;
   userInitials: string;
   productTitle: string;
   status: OrderStatus;
   price: number;
+  quantity?: number;
+  discount?: number;
+  invoiceNumber?: string;
   date: string;
+  contents?: ProductContent[];
 }
 
 // Notification types

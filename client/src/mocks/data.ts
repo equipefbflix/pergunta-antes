@@ -385,31 +385,134 @@ export const orders: Order[] = [
     id: 8364,
     userId: 1,
     userName: 'João Dias',
+    userEmail: 'joao.dias@example.com',
     userInitials: 'JD',
-    productTitle: 'Proxy Premium',
+    productTitle: 'Proxy Premium [DataCenter UK]',
     status: 'completed',
     price: 89.90,
-    date: '2023-07-23'
+    quantity: 1,
+    discount: 0,
+    invoiceNumber: 'INV-20250715-8364',
+    date: '2025-07-15T14:36:28',
+    contents: [
+      {
+        id: 1,
+        productId: 1,
+        type: 'file',
+        content: 'proxy_credentials_8364.txt',
+        fileName: 'proxy_credentials.txt',
+        fileType: 'text/plain',
+        isAvailable: true,
+        soldAt: '2025-07-15T14:36:28'
+      }
+    ]
   },
   {
     id: 8363,
     userId: 3,
     userName: 'Maria Silva',
+    userEmail: 'maria.silva@example.com',
     userInitials: 'MS',
-    productTitle: 'Business Manager',
+    productTitle: 'Business Manager Pro +2 Páginas',
     status: 'pending',
     price: 299.90,
-    date: '2023-07-23'
+    quantity: 1,
+    discount: 5,
+    invoiceNumber: 'INV-20250715-8363',
+    date: '2025-07-15T12:18:45',
+    contents: [
+      {
+        id: 2,
+        productId: 2,
+        type: 'link',
+        content: 'https://business.facebook.com/bm/8363',
+        isAvailable: true,
+        soldAt: '2025-07-15T12:18:45'
+      }
+    ]
   },
   {
     id: 8362,
     userId: 4,
     userName: 'Ricardo Santos',
+    userEmail: 'ricardo.santos@example.com',
     userInitials: 'RS',
-    productTitle: 'Perfil Verificado',
+    productTitle: 'Perfil Verificado + Cartão CA',
     status: 'completed',
     price: 149.90,
-    date: '2023-07-22'
+    quantity: 1,
+    discount: 0,
+    invoiceNumber: 'INV-20250714-8362',
+    date: '2025-07-14T09:45:31',
+    contents: [
+      {
+        id: 3,
+        productId: 3,
+        type: 'file',
+        content: 'perfil_credentials_8362.txt',
+        fileName: 'perfil_credentials.txt',
+        fileType: 'text/plain',
+        isAvailable: true,
+        soldAt: '2025-07-14T09:45:31'
+      }
+    ]
+  },
+  {
+    id: 8361,
+    userId: 2,
+    userName: 'Ana Oliveira',
+    userEmail: 'ana.oliveira@example.com',
+    userInitials: 'AO',
+    productTitle: 'Perfil CA +2 BM 250 +1 Página + Doc [Data mix]',
+    status: 'completed',
+    price: 395.90,
+    quantity: 1,
+    discount: 10,
+    invoiceNumber: 'INV-20250713-8361',
+    date: '2025-07-13T16:22:10',
+    contents: [
+      {
+        id: 4,
+        productId: 4,
+        type: 'file',
+        content: 'perfil_ca_bundle_8361.txt',
+        fileName: 'acesso_perfil_ca.txt',
+        fileType: 'text/plain',
+        isAvailable: true,
+        soldAt: '2025-07-13T16:22:10'
+      },
+      {
+        id: 5,
+        productId: 4,
+        type: 'link',
+        content: 'https://business.facebook.com/bm/8361-1',
+        isAvailable: true,
+        soldAt: '2025-07-13T16:22:10'
+      },
+      {
+        id: 6,
+        productId: 4,
+        type: 'link',
+        content: 'https://business.facebook.com/bm/8361-2',
+        isAvailable: true,
+        soldAt: '2025-07-13T16:22:10'
+      }
+    ]
+  },
+  {
+    id: 8360,
+    userId: 5,
+    userName: 'Paulo Mendes',
+    userEmail: 'paulo.mendes@example.com',
+    userInitials: 'PM',
+    productTitle: 'Proxy Residencial [Brasil]',
+    status: 'failed',
+    price: 129.90,
+    quantity: 1,
+    discount: 0,
+    invoiceNumber: 'INV-20250712-8360',
+    date: '2025-07-12T11:05:48',
+    contents: []
   }
 ];
 
