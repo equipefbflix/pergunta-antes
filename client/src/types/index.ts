@@ -203,6 +203,27 @@ export interface Payment {
   cashback?: number;
 }
 
+// Coupon types
+export type CouponDurationType = 'days' | 'hours' | 'minutes' | 'seconds' | 'unlimited';
+export type CouponStatus = 'active' | 'inactive' | 'expired';
+export type CouponApplicationType = 'all' | 'specific' | 'category';
+
+export interface Coupon {
+  id: number;
+  code: string;
+  percentage: number;
+  minimumAmount: number;
+  applicationType: CouponApplicationType;
+  applicationTarget: string[] | null; // IDs of products or categories
+  timesUsed: number;
+  maxUses: number | null; // null means unlimited
+  status: CouponStatus;
+  createdAt: string;
+  expiresAt: string | null;
+  durationType: CouponDurationType;
+  durationValue: number | null;
+}
+
 // Glassmorphism hook return type
 export interface GlassmorphismStyles {
   className: string;

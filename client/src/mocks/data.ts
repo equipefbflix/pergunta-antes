@@ -516,6 +516,160 @@ export const orders: Order[] = [
   }
 ];
 
+// Mock Coupons
+export const coupons: Coupon[] = [
+  {
+    id: 1,
+    code: 'ALP10',
+    percentage: 10,
+    minimumAmount: 50,
+    applicationType: 'all',
+    applicationTarget: null,
+    timesUsed: 73,
+    maxUses: 100,
+    status: 'active',
+    createdAt: '2025-01-15T00:00:00',
+    expiresAt: '2025-06-30T23:59:59',
+    durationType: 'days',
+    durationValue: 180
+  },
+  {
+    id: 2,
+    code: 'MV25',
+    percentage: 25,
+    minimumAmount: 150,
+    applicationType: 'category',
+    applicationTarget: ['proxy'],
+    timesUsed: 32,
+    maxUses: 50,
+    status: 'active',
+    createdAt: '2025-02-10T00:00:00',
+    expiresAt: '2025-05-10T23:59:59',
+    durationType: 'days',
+    durationValue: 90
+  },
+  {
+    id: 3,
+    code: 'BLK50',
+    percentage: 50,
+    minimumAmount: 300,
+    applicationType: 'category',
+    applicationTarget: ['bm'],
+    timesUsed: 15,
+    maxUses: 20,
+    status: 'active',
+    createdAt: '2025-03-20T00:00:00',
+    expiresAt: '2025-04-20T23:59:59',
+    durationType: 'days',
+    durationValue: 30
+  },
+  {
+    id: 4,
+    code: 'HOUR15',
+    percentage: 15,
+    minimumAmount: 1,
+    applicationType: 'all',
+    applicationTarget: null,
+    timesUsed: 98,
+    maxUses: 100,
+    status: 'inactive',
+    createdAt: '2025-04-10T10:00:00',
+    expiresAt: null,
+    durationType: 'hours',
+    durationValue: 24
+  },
+  {
+    id: 5,
+    code: 'FLASH30',
+    percentage: 30,
+    minimumAmount: 80,
+    applicationType: 'specific',
+    applicationTarget: ['1', '3', '5'],
+    timesUsed: 25,
+    maxUses: null,
+    status: 'expired',
+    createdAt: '2025-03-05T14:00:00',
+    expiresAt: '2025-03-06T14:00:00',
+    durationType: 'hours',
+    durationValue: 24
+  },
+  {
+    id: 6,
+    code: 'NEWUSER20',
+    percentage: 20,
+    minimumAmount: 1,
+    applicationType: 'all',
+    applicationTarget: null,
+    timesUsed: 312,
+    maxUses: null,
+    status: 'active',
+    createdAt: '2025-01-01T00:00:00',
+    expiresAt: null,
+    durationType: 'unlimited',
+    durationValue: null
+  },
+  {
+    id: 7,
+    code: 'QUICK5',
+    percentage: 5,
+    minimumAmount: 30,
+    applicationType: 'all',
+    applicationTarget: null,
+    timesUsed: 18,
+    maxUses: 100,
+    status: 'active',
+    createdAt: '2025-04-15T12:00:00',
+    expiresAt: '2025-04-15T16:00:00',
+    durationType: 'minutes',
+    durationValue: 240
+  },
+  {
+    id: 8,
+    code: 'JEF1689',
+    percentage: 10,
+    minimumAmount: 100,
+    applicationType: 'category',
+    applicationTarget: ['perfil'],
+    timesUsed: 55,
+    maxUses: 150,
+    status: 'active',
+    createdAt: '2025-03-01T00:00:00',
+    expiresAt: '2025-06-01T23:59:59',
+    durationType: 'days',
+    durationValue: 90
+  },
+  {
+    id: 9,
+    code: 'TEST40',
+    percentage: 40,
+    minimumAmount: 200,
+    applicationType: 'specific',
+    applicationTarget: ['2', '4'],
+    timesUsed: 3,
+    maxUses: 10,
+    status: 'active',
+    createdAt: '2025-04-01T00:00:00',
+    expiresAt: '2025-05-01T23:59:59',
+    durationType: 'days',
+    durationValue: 30
+  },
+  {
+    id: 10,
+    code: 'WEEKEND10',
+    percentage: 10,
+    minimumAmount: 21,
+    applicationType: 'all',
+    applicationTarget: null,
+    timesUsed: 87,
+    maxUses: 200,
+    status: 'active',
+    createdAt: '2025-04-12T00:00:00',
+    expiresAt: '2025-07-01T23:59:59',
+    durationType: 'days',
+    durationValue: 80
+  }
+];
+
 // Mock Payments
 export const payments: Payment[] = [
   {
