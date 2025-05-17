@@ -1,4 +1,4 @@
-import { Product, Subscription, Tutorial, Order, User, Banner, Notification, Category, ProductContent, Proxy } from '@/types';
+import { Product, Subscription, Tutorial, Order, User, Banner, Notification, Category, ProductContent, Proxy, Payment } from '@/types';
 
 // Mock Users
 export const users: User[] = [
@@ -513,6 +513,141 @@ export const orders: Order[] = [
     invoiceNumber: 'INV-20250712-8360',
     date: '2025-07-12T11:05:48',
     contents: []
+  }
+];
+
+// Mock Payments
+export const payments: Payment[] = [
+  {
+    id: '2e89ffa7-4866-45c0-aee1-6205da7c018',
+    userId: 1,
+    userName: 'Leonardo Santos',
+    userEmail: 'leonardojs85@gmail.com',
+    status: 'success',
+    amount: 100.00,
+    payerName: 'Leonardo Santos',
+    payerDocument: '70338684613',
+    payerDocumentType: 'cpf',
+    createdAt: '2025-05-14T10:57:00',
+    paidAt: '2025-05-14T10:58:00',
+    gateway: 'openpix'
+  },
+  {
+    id: '85e6bd72-e682-411d-81ca-72da7ba3100f',
+    userId: 2,
+    userName: 'Leonardo Vilas Boas Carvalho',
+    userEmail: 'leovilasjb@gmail.com',
+    status: 'success',
+    amount: 10.00,
+    payerName: 'Leonardo Vilas Boas Carvalho',
+    payerDocument: '11045658952',
+    payerDocumentType: 'cpf',
+    createdAt: '2025-05-13T22:45:00',
+    paidAt: '2025-05-13T22:46:00',
+    gateway: 'mercadopago'
+  },
+  {
+    id: 'a59e5817-07c9-424e-ac53-40888979ded4',
+    userId: 2,
+    userName: 'Leonardo Vilas Boas Carvalho',
+    userEmail: 'leovilasjb@gmail.com',
+    status: 'success',
+    amount: 200.00,
+    payerName: 'Leonardo Vilas Boas Carvalho',
+    payerDocument: '11045658952',
+    payerDocumentType: 'cpf',
+    createdAt: '2025-05-13T21:55:00',
+    paidAt: '2025-05-13T21:55:00',
+    gateway: 'openpix',
+    coupon: 'JEF1689',
+    couponPercentage: 10,
+    cashback: 20.00
+  },
+  {
+    id: 'f1f5871b-92bd-40f8-85d9-ec42a881ef8f',
+    userId: 3,
+    userName: 'Victor Ferreira Jardim Filho',
+    userEmail: 'gerenciamentodigital@gmail.com',
+    status: 'success',
+    amount: 36.00,
+    payerName: 'AGÊNCIA KERING DIGITAL LTDA',
+    payerDocument: '33760186000146',
+    payerDocumentType: 'cnpj',
+    company: 'AGÊNCIA KERING DIGITAL LTDA',
+    createdAt: '2025-05-13T20:08:00',
+    paidAt: '2025-05-13T20:08:00',
+    gateway: 'openpix'
+  },
+  {
+    id: '7ee6faca-e3eb-41c8-8476-6833fab32662',
+    userId: 4,
+    userName: 'Umar Pina Fadanelli',
+    userEmail: 'digitactivist@gmail.com',
+    status: 'success',
+    amount: 100.00,
+    payerName: 'C G VIGANO COMERCIAL',
+    payerDocument: '39548026000199',
+    payerDocumentType: 'cnpj',
+    company: 'C G VIGANO COMERCIAL',
+    createdAt: '2025-05-13T19:52:00',
+    paidAt: '2025-05-13T19:52:00',
+    gateway: 'mercadopago'
+  },
+  {
+    id: '64d3a3cb-cc30-4e91-83ad-219521567737c',
+    userId: 5,
+    userName: 'Gabriel Daion',
+    userEmail: 'magnanimidiadigital@gmail.com',
+    status: 'success',
+    amount: 130.00,
+    payerName: 'MAGMA MIDIA LTDA',
+    payerDocument: '37945054000102',
+    payerDocumentType: 'cnpj',
+    company: 'MAGMA MIDIA LTDA',
+    createdAt: '2025-05-13T19:10:00',
+    paidAt: '2025-05-13T19:11:00',
+    gateway: 'openpix'
+  },
+  {
+    id: 'e61509fa-6058-457b-921c-a0f793fa5032',
+    userId: 5,
+    userName: 'Gabriel Daion',
+    userEmail: 'magnanimidiadigital@gmail.com',
+    status: 'success',
+    amount: 130.00,
+    payerName: 'MAGMA MIDIA LTDA',
+    payerDocument: '37945054000102',
+    payerDocumentType: 'cnpj',
+    company: 'MAGMA MIDIA LTDA',
+    createdAt: '2025-05-13T18:05:00',
+    paidAt: '2025-05-13T18:06:00',
+    gateway: 'mercadopago'
+  },
+  {
+    id: 'b92f4d57-cc33-40e8-a5ad-219521234737c',
+    userId: 6,
+    userName: 'Marcos Ribeiro',
+    userEmail: 'marcos.ribeiro@gmail.com',
+    status: 'waiting',
+    amount: 89.90,
+    payerName: 'Marcos Ribeiro',
+    payerDocument: '45678912345',
+    payerDocumentType: 'cpf',
+    createdAt: '2025-05-13T17:30:00',
+    gateway: 'openpix'
+  },
+  {
+    id: 'a7e509fa-3257-427a-941c-b5f793fa2344',
+    userId: 7,
+    userName: 'Ana Oliveira',
+    userEmail: 'ana.oliveira@gmail.com',
+    status: 'expired',
+    amount: 59.90,
+    payerName: 'Ana Oliveira',
+    payerDocument: '56789012345',
+    payerDocumentType: 'cpf',
+    createdAt: '2025-05-13T14:22:00',
+    gateway: 'mercadopago'
   }
 ];
 

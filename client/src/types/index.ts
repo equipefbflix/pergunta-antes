@@ -180,6 +180,29 @@ export interface NotificationContextType {
   notifications: Notification[];
 }
 
+// Payment types
+export type PaymentStatus = 'success' | 'waiting' | 'expired';
+export type PaymentGateway = 'openpix' | 'mercadopago' | 'other';
+
+export interface Payment {
+  id: string;
+  userId: number;
+  userName: string;
+  userEmail: string;
+  status: PaymentStatus;
+  amount: number;
+  payerName: string;
+  payerDocument: string;
+  payerDocumentType: 'cpf' | 'cnpj';
+  company?: string;
+  createdAt: string;
+  paidAt?: string;
+  gateway: PaymentGateway;
+  coupon?: string;
+  couponPercentage?: number;
+  cashback?: number;
+}
+
 // Glassmorphism hook return type
 export interface GlassmorphismStyles {
   className: string;

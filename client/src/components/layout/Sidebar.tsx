@@ -28,6 +28,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
     { icon: <LayoutDashboard className="mr-3 h-5 w-5" />, name: "Dashboard", path: "/admin" },
     { icon: <Package className="mr-3 h-5 w-5" />, name: "Produtos", path: "/admin/produtos" },
     { icon: <ShoppingCart className="mr-3 h-5 w-5" />, name: "Pedidos", path: "/admin/pedidos" },
+    { icon: <CreditCard className="mr-3 h-5 w-5" />, name: "Pagamentos", path: "/admin/pagamentos" },
     { icon: <RefreshCw className="mr-3 h-5 w-5" />, name: "Assinaturas", path: "/admin/assinaturas" },
     { icon: <Network className="mr-3 h-5 w-5" />, name: "Proxy", path: "/proxies" },
     { icon: <Tag className="mr-3 h-5 w-5" />, name: "Cupons", path: "/admin/cupons" },

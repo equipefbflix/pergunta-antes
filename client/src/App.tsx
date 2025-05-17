@@ -10,6 +10,7 @@ import DashboardPage from "@/pages/DashboardPage";
 import CheckoutPage from "@/pages/CheckoutPage";
 import AdminDashboardPage from "@/pages/AdminDashboardPage";
 import AdminOrdersPage from "@/pages/AdminOrdersPage";
+import AdminPaymentsPage from "@/pages/AdminPaymentsPage";
 import ProductManagementPage from "@/pages/ProductManagementPage";
 import SubscriptionsPage from "@/pages/SubscriptionsPage";
 import OrdersPage from "@/pages/OrdersPage";
@@ -61,6 +62,9 @@ function Router() {
         </Route>
         <Route path="/admin/pedidos">
           <AdminOrdersPage />
+        </Route>
+        <Route path="/admin/pagamentos">
+          <AdminPaymentsPage />
         </Route>
         <Route>
           <NotFound />
