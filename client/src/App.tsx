@@ -95,7 +95,7 @@ function Router() {
         <Route path="/admin/assinaturas">
           <AdminAssinaturasPage />
         </Route>
-        <Route path="/admin/proxy-assinaturas">
+        <Route path="/proxies/assinaturas">
           <ProxyAssinaturasPage />
         </Route>
         <Route>

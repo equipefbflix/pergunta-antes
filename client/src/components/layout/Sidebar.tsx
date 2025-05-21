@@ -32,6 +32,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
     { icon: <CreditCard className="mr-3 h-5 w-5" />, name: "Pagamentos", path: "/admin/pagamentos" },
     { icon: <RefreshCw className="mr-3 h-5 w-5" />, name: "Assinaturas", path: "/admin/assinaturas" },
     { icon: <Network className="mr-3 h-5 w-5" />, name: "Proxy", path: "/proxies" },
+    { icon: <Network className="mr-3 h-5 w-5" />, name: "Proxy Assinaturas", path: "/proxies/assinaturas" },
     { icon: <Tag className="mr-3 h-5 w-5" />, name: "Cupons", path: "/admin/cupons" },
     { icon: <HandCoins className="mr-3 h-5 w-5" />, name: "Comissões", path: "/admin/comissoes" },
     { icon: <Video className="mr-3 h-5 w-5" />, name: "Tutoriais", path: "/admin/tutoriais" },
