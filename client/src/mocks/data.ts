@@ -1,4 +1,4 @@
-import { Product, Subscription, Tutorial, Order, User, Banner, Notification, Category, ProductContent, Proxy, Payment } from '@/types';
+import { Product, Subscription, Tutorial, Order, User, Banner, Notification, Category, ProductContent, Proxy, Payment, Coupon, Commission } from '@/types';
 
 // Mock Users
 export const users: User[] = [
@@ -513,6 +513,138 @@ export const orders: Order[] = [
     invoiceNumber: 'INV-20250712-8360',
     date: '2025-07-12T11:05:48',
     contents: []
+  }
+];
+
+// Mock Commissions
+export const commissions: Commission[] = [
+  {
+    id: 1,
+    status: 'pending',
+    affiliateId: 1,
+    affiliateName: 'Jefferson Borges dos Santos',
+    affiliateEmail: 'jeffborges123@gmail.com',
+    userId: 2,
+    userName: 'Leonardo Vilas Boas Carvalho',
+    userEmail: 'leovilasjb@gmail.com',
+    paymentId: 'a59e5817-07c9-424e-ac53-40888979ded4',
+    paymentAmount: 200.00,
+    commissionPercentage: 5,
+    commissionAmount: 10.00,
+    createdAt: '2025-05-13T21:55:00',
+    paidAt: null
+  },
+  {
+    id: 2,
+    status: 'pending',
+    affiliateId: 2,
+    affiliateName: 'Fabricio Neto',
+    affiliateEmail: 'fabricioneto03@gmail.com',
+    userId: 6,
+    userName: 'Marvin Vinícius Pereira',
+    userEmail: 'marvin.pereira@hotmail.com',
+    paymentId: 'd67bc30-8ef1c-462c-b47v-463989626e0',
+    paymentAmount: 200.00,
+    commissionPercentage: 10,
+    commissionAmount: 20.00,
+    createdAt: '2025-05-12T16:30:00',
+    paidAt: null
+  },
+  {
+    id: 3,
+    status: 'pending',
+    affiliateId: 1,
+    affiliateName: 'Jefferson Borges dos Santos',
+    affiliateEmail: 'jeffborges123@gmail.com',
+    userId: 7,
+    userName: 'Bianca Castro',
+    userEmail: 'castrobrianca2407@gmail.com',
+    paymentId: '238e7411-1303-4393-882e-32ceaa4a6c17',
+    paymentAmount: 130.00,
+    commissionPercentage: 5,
+    commissionAmount: 6.50,
+    createdAt: '2025-05-11T14:22:00',
+    paidAt: null
+  },
+  {
+    id: 4,
+    status: 'pending',
+    affiliateId: 1,
+    affiliateName: 'Jefferson Borges dos Santos',
+    affiliateEmail: 'jeffborges123@gmail.com',
+    userId: 8,
+    userName: 'Ana Flavia Mazzaro',
+    userEmail: 'mazzaroanaflavia@gmail.com',
+    paymentId: '3660fc5-6090-4795-90e0-4e110a4d2b28',
+    paymentAmount: 50.00,
+    commissionPercentage: 5,
+    commissionAmount: 2.50,
+    createdAt: '2025-05-10T09:15:00',
+    paidAt: null
+  },
+  {
+    id: 5,
+    status: 'pending',
+    affiliateId: 1,
+    affiliateName: 'Jefferson Borges dos Santos',
+    affiliateEmail: 'jeffborges123@gmail.com',
+    userId: 9,
+    userName: 'Giovanna',
+    userEmail: 'giovannaaraujo@gmail.com',
+    paymentId: '27e21901-6512-4d97-68e1-ffc8df8235f9',
+    paymentAmount: 110.00,
+    commissionPercentage: 5,
+    commissionAmount: 5.50,
+    createdAt: '2025-05-09T22:05:00',
+    paidAt: null
+  },
+  {
+    id: 6,
+    status: 'pending',
+    affiliateId: 1,
+    affiliateName: 'Jefferson Borges dos Santos',
+    affiliateEmail: 'jeffborges123@gmail.com',
+    userId: 10,
+    userName: 'David Lucas de Albuquerque Silva',
+    userEmail: 'david235dv@gmail.com',
+    paymentId: 'eafd302-6ebd-4d2-8128-5dec1a846fe',
+    paymentAmount: 900.00,
+    commissionPercentage: 5,
+    commissionAmount: 45.00,
+    createdAt: '2025-05-08T15:40:00',
+    paidAt: null
+  },
+  {
+    id: 7,
+    status: 'paid',
+    affiliateId: 3,
+    affiliateName: 'Carolina Mendes',
+    affiliateEmail: 'carol.mendes@gmail.com',
+    userId: 11,
+    userName: 'Roberto Almeida',
+    userEmail: 'robertoalmeida@gmail.com',
+    paymentId: 'b9f23d56-8a12-47f9-9c12-3e94a7c82d3f',
+    paymentAmount: 350.00,
+    commissionPercentage: 7,
+    commissionAmount: 24.50,
+    createdAt: '2025-04-20T11:30:00',
+    paidAt: '2025-05-01T14:25:00'
+  },
+  {
+    id: 8,
+    status: 'canceled',
+    affiliateId: 2,
+    affiliateName: 'Fabricio Neto',
+    affiliateEmail: 'fabricioneto03@gmail.com',
+    userId: 12,
+    userName: 'Patricia Lemos',
+    userEmail: 'patricia.lemos@hotmail.com',
+    paymentId: '72cfe349-9ab7-4d5e-b6f2-1c3a48ec9d2a',
+    paymentAmount: 150.00,
+    commissionPercentage: 10,
+    commissionAmount: 15.00,
+    createdAt: '2025-04-15T09:20:00',
+    paidAt: null
   }
 ];
 

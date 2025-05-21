@@ -224,6 +224,26 @@ export interface Coupon {
   durationValue: number | null;
 }
 
+// Commission types
+export type CommissionStatus = 'pending' | 'paid' | 'canceled';
+
+export interface Commission {
+  id: number;
+  status: CommissionStatus;
+  affiliateId: number;
+  affiliateName: string;
+  affiliateEmail: string;
+  userId: number;
+  userName: string;
+  userEmail: string;
+  paymentId: string;
+  paymentAmount: number;
+  commissionPercentage: number;
+  commissionAmount: number;
+  createdAt: string;
+  paidAt: string | null;
+}
+
 // Glassmorphism hook return type
 export interface GlassmorphismStyles {
   className: string;
