@@ -24,6 +24,7 @@ import OrdersPage from "@/pages/OrdersPage";
 import TutorialsPage from "@/pages/TutorialsPage";
 import AnunciosPage from "@/pages/AnunciosPage";
 import ProxyPage from "@/pages/ProxyPage";
+import ProxyAssinaturasPage from "@/pages/ProxyAssinaturasPage";
 import NotFound from "@/pages/not-found";
 import NotificationPopup from "@/components/NotificationPopup";
 import { useEffect } from "react";
@@ -93,6 +94,9 @@ function Router() {
         </Route>
         <Route path="/admin/assinaturas">
           <AdminAssinaturasPage />
+        </Route>
+        <Route path="/admin/proxy-assinaturas">
+          <ProxyAssinaturasPage />
         </Route>
         <Route>
           <NotFound />
