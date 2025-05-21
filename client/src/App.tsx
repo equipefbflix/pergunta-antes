@@ -14,6 +14,7 @@ import AdminPaymentsPage from "@/pages/AdminPaymentsPage";
 import AdminCouponsPage from "@/pages/AdminCouponsPage";
 import AdminCommissionsPage from "@/pages/AdminCommissionsPage";
 import AdminTutorialsPage from "@/pages/AdminTutorialsPage";
+import AdminBannersPage from "@/pages/AdminBannersPage";
 import ProductManagementPage from "@/pages/ProductManagementPage";
 import SubscriptionsPage from "@/pages/SubscriptionsPage";
 import OrdersPage from "@/pages/OrdersPage";
@@ -77,6 +78,9 @@ function Router() {
         </Route>
         <Route path="/admin/tutoriais">
           <AdminTutorialsPage />
+        </Route>
+        <Route path="/admin/banners">
+          <AdminBannersPage />
         </Route>
         <Route>
           <NotFound />
