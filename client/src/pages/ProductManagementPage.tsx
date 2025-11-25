@@ -21,7 +21,7 @@ import {
   LayoutGrid
 } from "lucide-react";
 import { products, categories, productContents } from "@/mocks/data";
-import { Product, Category, ProductContent, ProductStatus, ProductType, ProductTag } from "@/types";
+import { Product, Category, ProductContent, ProductStatus, ProductType, ProductTag, ProductCategory } from "@/types";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
